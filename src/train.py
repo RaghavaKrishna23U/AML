@@ -56,7 +56,7 @@ class ExperimentManager:
     def train_and_log_models(self, models, X_train, y_train, X_test, y_test):
         """
         Train and log multiple models in MLflow.
-        Logs model parameters, metrics, and artifacts.
+        Logs model parameters, metrics, and artifacts..
         """
         for model_name, model in models.items():
             # Dynamically name the run based on the model and current date
