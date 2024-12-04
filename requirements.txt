@@ -1,5 +1,4 @@
 scikit-learn
-azure-ml-sdk
 azure-ai-ml
 azure-identity
 azure-keyvault-secrets
