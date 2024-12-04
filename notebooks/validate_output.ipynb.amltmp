@@ -1,0 +1,99 @@
+{
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "# azureml-core of version 1.0.72 or higher is required\n",
+        "from azureml.core import Workspace, Dataset\n",
+        "\n",
+        "subscription_id = '9c15fe3b-278f-4875-b39a-d756406c9775'\n",
+        "resource_group = 'DP-100'\n",
+        "workspace_name = 'dp_100_learning'\n",
+        "\n",
+        "workspace = Workspace(subscription_id, resource_group, workspace_name)\n",
+        "\n",
+        "\n",
+        "datastore = Datastore.get(workspace, \"workspaceblobstore\")\n",
+        "dataset = Dataset.Tabular.from_delimited_files(path=(datastore, 'ExperimentRun/dcid.8c2e8615-7f0c-4a5e-92ef-48c99b63c436/predictions/predictions.csv'))\n",
+        "df = dataset.to_pandas_dataframe()\n",
+        "df.head()"
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "{'infer_column_types': 'False', 'activity': 'download.to_path'}\n{'infer_column_types': 'False', 'activity': 'download.to_path', 'activityApp': 'FileDataset'}\n{'infer_column_types': 'False', 'activity': 'download'}\n{'infer_column_types': 'False', 'activity': 'download', 'activityApp': 'FileDataset'}\n"
+        },
+        {
+          "output_type": "execute_result",
+          "execution_count": 1,
+          "data": {
+            "text/plain": "['/mnt/batch/tasks/shared/LS_root/mounts/clusters/notebookcluster/code/Users/RaghavaKrishnaU/predictions.csv']"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 1,
+      "metadata": {
+        "gather": {
+          "logged": 1733143809354
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "outputs": [],
+      "execution_count": null,
+      "metadata": {
+        "jupyter": {
+          "source_hidden": false,
+          "outputs_hidden": false
+        },
+        "nteract": {
+          "transient": {
+            "deleting": false
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python310-sdkv2",
+      "language": "python",
+      "display_name": "Python 3.10 - SDK v2"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.10.14",
+      "mimetype": "text/x-python",
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "pygments_lexer": "ipython3",
+      "nbconvert_exporter": "python",
+      "file_extension": ".py"
+    },
+    "microsoft": {
+      "ms_spell_check": {
+        "ms_spell_check_language": "en"
+      },
+      "host": {
+        "AzureML": {
+          "notebookHasBeenCompleted": true
+        }
+      }
+    },
+    "kernel_info": {
+      "name": "python310-sdkv2"
+    },
+    "nteract": {
+      "version": "nteract-front-end@1.0.0"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 2
+}
