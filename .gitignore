@@ -30,6 +30,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.ipynb_aml_checkpoints/
+.ipynb_checkpoints/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
