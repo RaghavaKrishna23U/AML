@@ -20,7 +20,7 @@ class DataPreparation:
         self.data_path = data_path
 
     def load_data(self):
-        """Load the dataset from the specified path."""
+        """Load the dataset from the specified path..."""
         df = pd.read_csv(self.data_path)
         print(f"Data loaded successfully from {self.data_path}")
         return df
