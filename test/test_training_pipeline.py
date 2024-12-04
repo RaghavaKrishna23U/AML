@@ -7,6 +7,7 @@ from sklearn.svm import SVC
 from unittest.mock import MagicMock, patch
 
 import sys
+import os
 sys.path.append('../src/')
 
 from src.train import DataPreparation, ExperimentManager, DataSaver  # Replace `your_module` with the actual file name
