@@ -9,7 +9,7 @@ from unittest.mock import MagicMock, patch
 import sys
 sys.path.append('../src/')
 
-from train import DataPreparation, ExperimentManager, DataSaver  # Replace `your_module` with the actual file name
+from src.train import DataPreparation, ExperimentManager, DataSaver  # Replace `your_module` with the actual file name
 
 @pytest.fixture
 def sample_data():
